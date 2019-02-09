@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  (function($) {
+/*  (function($) {
       $.fn.my_wysiwyg = function() {
 
         function buttons() {
@@ -13,4 +13,18 @@ $(document).ready(function() {
       }
 my_wysiwyg();
 });
+});*/
+
+
+jQuery.fn.my_wysiwyg = function() 
+{
+  function buttons() {
+    for(i = 1; i <= 10; i++) {
+      var buttons = $('<button class="btn btn-primary" >hehe</button>');
+      $('body').append(buttons);
+    }
+  }
+  buttons();
+};
+$("body").my_wysiwyg();
 });

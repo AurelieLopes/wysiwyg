@@ -1,8 +1,13 @@
-function dropdown() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
-
 jQuery.fn.my_wysiwyg = function() 
 {
-	des trucs
+	function buttons() {
+		for(i = 1; i <= 10; i++) {
+			var buttons = $('<input type="button">');
+			$('body').append(buttons);
+		}
+	}
+	buttons();
 };
+ $(function() {
+ 	$("body").my_wysiwyg();
+ }); 
