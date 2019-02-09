@@ -22,8 +22,9 @@ jQuery.fn.my_wysiwyg = function() {
     var col12 = $('<div class="col-md-12 text-center">');
     $("body").append(row);
     $(".row").append(col12);
+    
     for(i = 1; i <= 10; i++) {
-      var buttons = $('<button class="btn btn-primary" id=btn' + i + '>hehe</button>');
+      var buttons = $('<button class="btn btn-primary mt-3 mb-5" id=btn' + i + '>hehe</button>');
       $(".col-md-12").append(buttons);
     }
   }
