@@ -16,15 +16,20 @@ my_wysiwyg();
 });*/
 
 
-jQuery.fn.my_wysiwyg = function() 
-{
+jQuery.fn.my_wysiwyg = function() {
   function buttons() {
     for(i = 1; i <= 10; i++) {
-      var buttons = $('<button class="btn btn-primary" >hehe</button>');
-      $('body').append(buttons);
+      var buttons = $('<button class="btn btn-primary" id=btn' + i + '></button>');
+      $("body").append(buttons);
     }
   }
   buttons();
+
+  function textArea() {
+    var text = $("<textarea>");
+    $("body").append(text);
+  }
+  textArea();
 };
 $("body").my_wysiwyg();
 });
