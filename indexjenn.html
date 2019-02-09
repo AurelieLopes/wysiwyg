@@ -1,0 +1,88 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>WYSIWYG</title>
+</head>
+<body>
+
+	<h2>What You See Is What You Get Editor</h2>
+
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+				<label class="btn btn-primary">
+					<input type="checkbox" autocomplete="off"> <strong>Bold</strong>
+				</label>
+				<label class="btn btn-primary">
+					<input type="checkbox" autocomplete="off"> <em>Italic</em>
+				</label>
+				<label class="btn btn-primary">
+					<input type="checkbox" autocomplete="off"> <u>Underlined</u>
+				</label>
+				<label class="btn btn-primary">
+					<input type="checkbox" autocomplete="off"> <s>Strikethrough</s>
+				</label>
+				<div class="dropdown">
+					<button class="dropbtn btn btn-primary" onclick="dropdown()">Change font color</button>
+					<div id="myDropdown" class="dropdown-content">
+						<a class="dropdown-item blue" href="#">Blue</a>
+						<a class="dropdown-item purple" href="#">Purple</a>
+						<a class="dropdown-item pink" href="#">Pink</a>
+						<a class="dropdown-item red" href="#">Red</a>
+						<a class="dropdown-item orange" href="#">Orange</a>
+						<a class="dropdown-item yellow" href="#">Yellow</a>
+						<a class="dropdown-item green" href="#">Green</a>
+						<a class="dropdown-item black" href="#">Black</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn btn btn-primary" onclick="dropdown()">Change font size</button>
+					<div id="myDropdown" class="dropdown-content">
+						<a class="dropdown-item" href="#">8</a>
+						<a class="dropdown-item" href="#">10</a>
+						<a class="dropdown-item" href="#">12</a>
+						<a class="dropdown-item" href="#">15</a>
+						<a class="dropdown-item" href="#">18</a>
+						<a class="dropdown-item" href="#">20</a>
+						<a class="dropdown-item" href="#">22</a>
+						<a class="dropdown-item" href="#">25</a>
+						<a class="dropdown-item" href="#">28</a>
+						<a class="dropdown-item" href="#">30</a>
+						<a class="dropdown-item" href="#">32</a>
+						<a class="dropdown-item" href="#">35</a>
+						<a class="dropdown-item" href="#">38</a>
+						<a class="dropdown-item" href="#">40</a>
+						<a class="dropdown-item" href="#">45</a>
+						<a class="dropdown-item" href="#">50</a>
+						<a class="dropdown-item" href="#">55</a>
+						<a class="dropdown-item" href="#">60</a>
+						<a class="dropdown-item" href="#">65</a>
+						<a class="dropdown-item" href="#">70</a>
+					</div>
+				</div>
+				<label class="btn btn-primary">
+					<input class="left" type="checkbox" autocomplete="off"> Left align
+				</label>
+				<label class="btn btn-primary">
+					<input class="right" type="checkbox" autocomplete="off"> Right align
+				</label>
+				<label class="btn btn-primary">
+					<input class="center" type="checkbox" autocomplete="off"> Center
+				</label>
+				<label class="btn btn-primary">
+					<input class="justify" type="checkbox" autocomplete="off"> Justify
+				</label>
+			</div>
+		</div>
+	</div>
+
+	<textarea rows="20" cols="100"> 
+	</textarea> 
+
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+	<script src="plugin.js"></script>
+</body>
+</html>
