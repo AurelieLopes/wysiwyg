@@ -18,15 +18,19 @@ my_wysiwyg();
 
 jQuery.fn.my_wysiwyg = function() {
   function buttons() {
+    var row = $('<div class="row">');
+    var col12 = $('<div class="col-md-12 text-center">');
+    $("body").append(row);
+    $(".row").append(col12);
     for(i = 1; i <= 10; i++) {
-      var buttons = $('<button class="btn btn-primary" id=btn' + i + '></button>');
-      $("body").append(buttons);
+      var buttons = $('<button class="btn btn-primary" id=btn' + i + '>hehe</button>');
+      $(".col-md-12").append(buttons);
     }
   }
   buttons();
 
   function textArea() {
-    var text = $("<textarea>");
+    var text = $("<textarea rows='20' cols='100'>");
     $("body").append(text);
   }
   textArea();
