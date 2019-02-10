@@ -12,6 +12,34 @@ $(document).ready(
         {
           type: 'strikethrough',
           button: '<button class="strikethrough" onclick="document.execCommand(\'strikeThrough\', false, \'\');">Strikethrough</button>'
+        },
+        {
+          type: 'link',
+          button: '<button class="link" onclick="document.execCommand(\'createLink\', false, \'href=\');">Link</button>'
+        },
+        {
+          type: 'increase',
+          button: '<button class="increase" onclick="document.execCommand(\'increaseFontSize\', false, \'\');">Increase font size</button>'
+        },
+        {
+          type: 'decrease',
+          button: '<button class="decrease" onclick="document.execCommand(\'decreaseFontSize\', false, \'\');">Decrease font size</button>'
+        },
+        {
+          type: 'left',
+          button: '<button class="left" onclick="document.execCommand(\'justifyLeft\', false, \'\');">Align left</button>'
+        },
+        {
+          type: 'right',
+          button: '<button class="right" onclick="document.execCommand(\'justifyRight\', false, \'\');">Align right</button>'
+        },
+        {
+          type: 'center',
+          button: '<button class="center" onclick="document.execCommand(\'justifyCenter\', false, \'\');">Center</button>'
+        },
+        {
+          type: 'justify',
+          button: '<button class="justify" onclick="document.execCommand(\'justifyFull\', false, \'\');">Justify</button>'
         }
       ];
 
