@@ -19,7 +19,7 @@ $(document).ready(
         },
         {
           type: 'fontsize',
-          button: '<select id="fontsize" onchange="changeSize()"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option></select>'
+          button: '<select id="fontsize"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option></select>'
         },
         {
           type: 'left',
@@ -47,24 +47,11 @@ $(document).ready(
         },
         {
           type: 'selectcolor',
-          button: '<select id="selectcolor" onchange="selectColor()"><option value="#5998ff">Blue</option><option value="#a20dc4">Purple</option><option value="#ff68b6">Pink</option>><option value="#db0015">Red</option><option value="#ff7b00">Orange</option><option value="#ffd932">Yellow</option><option value="#4caf16">Green</option><option value="black">Black</option><select>'
+          button: '<select id="selectcolor"><option value="#5998ff">Blue</option><option value="#a20dc4">Purple</option><option value="#ff68b6">Pink</option>><option value="#db0015">Red</option><option value="#ff7b00">Orange</option><option value="#ffd932">Yellow</option><option value="#4caf16">Green</option><option value="black">Black</option><select>'
         },
       ];
 
-      var options = {
-          option1: "bold",
-          option2: "italic",
-          option3: "strikethrough",
-          option4: "link",
-          option5: "fontsize",
-          option6: "left",
-          option7: "right",
-          option8: "center",
-          option9: "justify",
-          option10: "indent",
-          option11: "outdent",
-          option12: "selectcolor"
-      }
+      console.log(options);
       // On cree la div avec contenteditable qui permettra de "simuler" un textarea
       var editor = $(this).after(
         '<div class="my_wysiwyg-editor textarea" contenteditable="true">' +
@@ -105,7 +92,6 @@ $(document).ready(
           "margin-top": "20px"
         });
 
-
         if(options.buttons && options.buttons.length) {
           defaultButtons.forEach(function(item) {
             if(options.buttons.indexOf(item.type) > -1) {
@@ -113,19 +99,20 @@ $(document).ready(
             }
           });
         } else {
-            defaultButtons.forEach(function(item) {
-              $('.buttons-panel').append(item.button);
-            });
-          }
-
+          defaultButtons.forEach(function(item) {
+            $('.buttons-panel').append(item.button);
+          });
         }
-        buttons();
 
-      $('#fontsize').change(function changeSize() {
+     }
+      buttons();
+
+      var content = $(".textarea").html();
+      $('#fontsize').change(function() {
         document.execCommand('fontSize', false, this.value);
       });
 
-      $('#selectcolor').change(function selectColor() {
+      $('#selectcolor').change(function() {
         document.execCommand('foreColor', false, this.value);
       });
 
