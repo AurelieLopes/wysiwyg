@@ -1,5 +1,5 @@
 $(document).ready(
-  (function () {
+  (function ($) {
     $.fn.my_wysiwyg = function (options) {
       var defaultButtons = [{
           type: 'bold',
@@ -15,7 +15,7 @@ $(document).ready(
         },
         {
           type: 'link',
-          button: '<button class="link" onclick="document.execCommand(\'createLink\', false, \'href=\');">Link</button>'
+          button: '<button class="link">Link</button>'
         },
         {
           type: 'fontsize',
@@ -51,7 +51,9 @@ $(document).ready(
         },
       ];
 
-      console.log(options);
+      // On definit les Paragraphes à chaque saut de ligne
+      document.execCommand('defaultParagraphSeparator', false, 'p');
+
       // On cree la div avec contenteditable qui permettra de "simuler" un textarea
       var editor = $(this).after(
         '<div class="my_wysiwyg-editor textarea" contenteditable="true">' +
@@ -59,8 +61,11 @@ $(document).ready(
         '</div>'
       );
 
+      $('.my_wysiwyg-editor').after('<button id="gethtml">Show HTML</button>')
+      $('.my_wysiwyg-editor').after('<div class="html-wrapper" style="display:none"></div>')
+
       $(".my_wysiwyg-editor").css({
-        "display": "block",
+        "display": "block;",
         "margin-right": "auto",
         "margin-left": "auto",
         "height": "500px",
@@ -80,7 +85,7 @@ $(document).ready(
 
       function buttons(buttons) {
         // on cree une div ou on va inserer les buttons
-        var buttonsWrapper = $(editor).before(
+       $('.my_wysiwyg-editor').before(
           '<div class="buttons-panel"></div>'
         );
 
@@ -107,7 +112,6 @@ $(document).ready(
      }
       buttons();
 
-      var content = $(".textarea").html();
       $('#fontsize').change(function() {
         document.execCommand('fontSize', false, this.value);
       });
@@ -116,6 +120,18 @@ $(document).ready(
         document.execCommand('foreColor', false, this.value);
       });
 
+      $('.link').click(function() {
+        var url = prompt("Enter the URL");
+        document.execCommand("createLink", false, url);
+      });
+
+      $('#gethtml').click(function() {
+        var contenu = $('.my_wysiwyg-editor').html();
+        $('.html-wrapper').toggle().text(contenu);
+      })
+
+      localstorage.setItem('wysiwigText', $('.my_wisiwyg-editor').html());
+      
     };
   })(jQuery)
 );
