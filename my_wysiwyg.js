@@ -1,66 +1,42 @@
-$(document).ready(function() {
-
-
-(function($) {
-
-  $.fn.my_wysiwyg = function() {
-
-    function buttons() {
-      var row = $('<div class="row">');
-      var col12 = $('<div class="col-md-12 text-center">');
-      $("body").append(row);
-      $(".row").append(col12);
-
-      for (i = 1; i <= 10; i++) {
-        var buttons = $('<button class="btn btn-outline-dark mt-3 mb-5" id=btn' + i + '></button>');
-        $(col12).append(buttons);
-      }
-<<<<<<< HEAD
-my_wysiwyg();
-});
-});*/
-
-
-jQuery.fn.my_wysiwyg = function() {
-  function buttons() {
-    var row = $('<div class="row">');
-    var col12 = $('<div class="col-md-12 text-center">');
-    $("body").append(row);
-    $(".row").append(col12);
-    for(i = 1; i <= 10; i++) {
-      var buttons = $('<button class="btn btn-primary mt-3 mb-5" id=btn' + i + '>hehe</button>');
-      $(".col-md-12").append(buttons);
-=======
-
-      $("#btn1").html("<strong>B</strong>");
-      $("#btn1").click(function() {
-        $("#btn1").attr("class", "btn btn-outline-dark mt-3 mb-5 active");
-        console.log("Hello");
-
-        if ($("#btn1").hasClass("btn btn-outline-dark mt-3 mb-5 active")) {
-        $("textarea").toggleClass("bold");
-        $(".bold").css("font-weight", "bold");
-        $("textarea").hasClass("bold")?$("textarea").val("bold"):$("textarea").val("normal");
+$(document).ready(
+  (function () {
+    $.fn.my_wysiwyg = function (options) {
+      var defaultButtons = [{
+          type: 'bold',
+          button: '<button class="bold" onclick="document.execCommand(\'bold\', false, \'\');">Bold</button>'
+        },
+        {
+          type: 'italic',
+          button: '<button class="italic" onclick="document.execCommand(\'italic\', false, \'\');">Italic</button>'
         }
+      ];
 
-      })
-      $("#btn2").html("<i>I</i>");
-      $("#btn3").html("<del>LOL</del>");
-      $("#btn4").html("FS");
-      $("#btn5").html("C");
-      $("#btn6").html("Link");
-      $("#btn7").html("Link");
->>>>>>> 506ce6d14ca3046d67c627b2464fa17f0da813df
-    }
-    buttons();
+      // On cree la div avec contenteditable qui permettra de "simuler" un textarea
+      var editor = $(this).after(
+        '<div class="my_wysiwyg-editor textarea" contenteditable="true">' +
+        $(this).val() +
+        '</div>'
+      );
 
-    function textArea() {
-      var text = $("<textarea rows='20' cols='100'>");
-      $("body").append(text);
-    }
-    textArea();
-  };
+      // On cache le textarea 'original'
+      $(this).hide();
 
-}(jQuery));
-$("body").my_wysiwyg();
-});
+      function buttons(buttons) {
+        // on cree une div ou on va inserer les buttons
+        var buttonsWrapper = $(editor).before(
+          '<div class="buttons-panel"></div>'
+        );
+
+        defaultButtons.forEach(function (item) {
+          $('.buttons-panel').append(item.button);
+        });
+      }
+
+      if (options.buttons) {
+        buttons(options.buttons);
+      } else {
+        buttons();
+      }
+    };
+  })(jQuery)
+);
