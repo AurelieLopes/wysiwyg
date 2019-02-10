@@ -18,12 +18,8 @@ $(document).ready(
           button: '<button class="link" onclick="document.execCommand(\'createLink\', false, \'href=\');">Link</button>'
         },
         {
-          type: 'increase',
-          button: '<button class="increase" onclick="document.execCommand(\'increaseFontSize\', false, \'\');">Increase font size</button>'
-        },
-        {
-          type: 'decrease',
-          button: '<button class="decrease" onclick="document.execCommand(\'decreaseFontSize\', false, \'\');">Decrease font size</button>'
+          type: 'fontsize',
+          button: '<select id="fontsize">Font size<option value="increase" onclick="document.execCommand(\'fontSize\', false, \'1\');">1</option><option value="increase" onclick="document.execCommand(\'fontSize\', false, \'2\');">2</option><option value="increase" onclick="document.execCommand(\'fontSize\', false, \'3\');">3</option><option value="increase" onclick="document.execCommand(\'fontSize\', false, \'4\');">4</option><option value="increase" onclick="document.execCommand(\'fontSize\', false, \'5\');">5</option><option value="increase" onclick="document.execCommand(\'fontSize\', false, \'6\');">6</option><option value="increase" onclick="document.execCommand(\'fontSize\', false, \'7\');">7</option></select>'
         },
         {
           type: 'left',
@@ -40,7 +36,19 @@ $(document).ready(
         {
           type: 'justify',
           button: '<button class="justify" onclick="document.execCommand(\'justifyFull\', false, \'\');">Justify</button>'
-        }
+        },
+        {
+          type: 'indent',
+          button: '<button class="indent" onclick="document.execCommand(\'indent\', false, \'\');">Indent</button>'
+        },
+        {
+          type: 'outdent',
+          button: '<button class="outdent" onclick="document.execCommand(\'outdent\', false, \'\');">Outdent</button>'
+        },
+        {
+          type: 'selectcolor',
+          button: '<select id="selectcolor"><option value="blue" onclick="document.execCommand(\'foreColor\', false, \'#5998ff\');">Blue</option><option value="purple" onclick="document.execCommand(\'foreColor\', false, \'#a20dc4\');">Purple</option><option value="pink" onclick="document.execCommand(\'foreColor\', false, \'#ff68b6\');">Pink</option>><option value="red" onclick="document.execCommand(\'foreColor\', false, \'#db0015\');">Red</option><option value="orange" onclick="document.execCommand(\'foreColor\', false, \'#ff7b00\');">Orange</option><option value="yellow" onclick="document.execCommand(\'foreColor\', false, \'#ffd932\');">Yellow</option><option value="green" onclick="document.execCommand(\'foreColor\', false, \'#4caf16\');">Green</option><option value="black" onclick="document.execCommand(\'foreColor\', false, \'black\');">Black</option><select>'
+        },
       ];
 
       // On cree la div avec contenteditable qui permettra de "simuler" un textarea
