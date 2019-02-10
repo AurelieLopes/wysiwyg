@@ -58,6 +58,22 @@ $(document).ready(
         '</div>'
       );
 
+      $(".my_wysiwyg-editor").css({
+        "display": "block",
+        "margin-right": "auto",
+        "margin-left": "auto",
+        "height": "500px",
+        "width": "70%",
+        "border": "1px solid",
+        "-moz-appearance": "textfield-multiline",
+        "-webkit-appearance": "textarea",
+        "border": "1px solid gray",
+        "font": "medium -moz-fixed",
+        "font": "-webkit-small-control",
+        "overflow": "auto",
+        "resize": "both"
+      });
+
       // On cache le textarea 'original'
       $(this).hide();
 
@@ -66,6 +82,14 @@ $(document).ready(
         var buttonsWrapper = $(editor).before(
           '<div class="buttons-panel"></div>'
         );
+
+        $(".buttons-panel").css({
+          "display": "table",
+          "margin-left": "auto",
+          "margin-right": "auto",
+          "margin-bottom": "20px",
+          "margin-top": "20px"
+        });
 
         defaultButtons.forEach(function (item) {
           $('.buttons-panel').append(item.button);
