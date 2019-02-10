@@ -8,6 +8,10 @@ $(document).ready(
         {
           type: 'italic',
           button: '<button class="italic" onclick="document.execCommand(\'italic\', false, \'\');">Italic</button>'
+        },
+        {
+          type: 'strikethrough',
+          button: '<button class="strikethrough" onclick="document.execCommand(\'strikeThrough\', false, \'\');">Strikethrough</button>'
         }
       ];
 
