@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wysiwyg</title>
-</head>
-<div>
-</div>
+    <title>Wysiwyg</title>
+  </head>
+  <div></div>
 
-<body>
-  <textarea name="" id="" cols="30" rows="10"></textarea>
-</body>
+  <body>
+    <h2>What You See Is What You Get Editor</h2>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="my_wysiwyg.js"></script>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+  </body>
 
-<script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="my_wysiwyg.js"></script>
 
-  $("textarea").my_wysiwyg({
-    buttons: ['bold', 'italic', 'strikethrough', 'fontsize', 'right', 'left', 'selectcolor']
-  });
-</script>
-
+  <script>
+    $('textarea').my_wysiwyg({
+      buttons: [
+        'bold',
+        'italic',
+        'strikethrough',
+        'fontsize',
+        'right',
+        'left',
+        'selectcolor'
+      ]
+    });
+  </script>
 </html>

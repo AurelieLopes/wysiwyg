@@ -1,0 +1,14 @@
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-image: url("./image/sea-edge-79ab30e2.png");
+  background-repeat: round;
+
+}
+
+.my_wysiwyg-editor {
+  background-color: #E6E6FA;
+}
